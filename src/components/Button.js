@@ -1,16 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = () => {
+const Button = ({ children }) => {
   const Button = styled.button`
     color: white;
     background: ${(props) => (props.primary ? "skyblue" : "red")};
     outline: none;
-    height: 50px;
-    width: 100px;
     border-radius: 15px;
+    border: ${(props) => (props.primary ? "1px solid black" : null)};
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    margin: 1rem;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1, 1.1);
+      transition: 0.7s;
+    }
   `;
-  return <Button primary>Click Me</Button>;
+  return (
+    <>
+      <Button>{children}</Button>
+      <Button primary>{children}</Button>
+    </>
+  );
 };
 
 export default Button;
