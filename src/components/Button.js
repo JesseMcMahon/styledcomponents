@@ -20,7 +20,6 @@ const Button = ({ children }) => {
   return (
     <>
       <Button>{children}</Button>
-      <Button primary>{children}</Button>
     </>
   );
 };
